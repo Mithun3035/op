@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Footer</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+/* ================= FOOTER ================= */
+
+.site-footer {
+    position: relative;
+    background: linear-gradient(135deg, #0b0a1a, #15142f);
+    padding: 80px 20px 30px;
+    overflow: hidden;
+}
+
+/* glow */
+.site-footer::before {
+    content: "";
+    position: absolute;
+    top: -150px;
+    left: -150px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(255,78,205,0.25), transparent 70%);
+    filter: blur(100px);
+}
+
+/* grid */
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 50px;
+    position: relative;
+    z-index: 1;
+}
+
+/* ================= LEFT BRAND ================= */
+
+.footer-brand h2 {
+    color: #fff;
+    font-size: 1.7rem;
+    margin-bottom: 10px;
+}
+
+.footer-brand h2 span {
+    color: #ff4ecd;
+}
+
+.footer-brand p {
+    color: rgba(255,255,255,0.65);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* badges */
+.badges {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.badge {
+    font-size: 0.75rem;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+    backdrop-filter: blur(8px);
+}
+
+.badge.secure {
+    background: rgba(0,255,150,0.15);
+    color: #00ffb3;
+}
+
+/* ================= LINKS ================= */
+
+.footer-col h3 {
+    color: #fff;
+    font-size: 1.1rem;
+    margin-bottom: 18px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-col h3::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 45px;
+    height: 3px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #ff4ecd, #6c63ff);
+}
+
+.footer-col a {
+    display: block;
+    color: rgba(255,255,255,0.7);
+    margin: 10px 0;
+    text-decoration: none;
+    font-size: 0.92rem;
+    transition: 0.3s ease;
+    width: fit-content;
+}
+
+.footer-col a:hover {
+    color: #ff4ecd;
+    transform: translateX(6px);
+}
+
+/* ================= SOCIAL ================= */
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 50px;
+    position: relative;
+    z-index: 1;
+}
+
+.footer-social a {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 16px;
+    color: #fff;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(8px);
+    transition: 0.3s ease;
+}
+
+.footer-social a:hover {
+    transform: translateY(-6px) scale(1.1);
+}
+
+.footer-social a:nth-child(1):hover { background: #1877f2; }
+.footer-social a:nth-child(2):hover { background: #e1306c; }
+.footer-social a:nth-child(3):hover { background: #25d366; }
+.footer-social a:nth-child(4):hover { background: #000; }
+.footer-social a:nth-child(5):hover { background: #0a66c2; }
+.footer-social a:nth-child(6):hover { background: #ff0000; }
+
+/* ================= BOTTOM ================= */
+
+.footer-bottom {
+    margin-top: 40px;
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    color: rgba(255,255,255,0.5);
+    font-size: 0.85rem;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-col a {
+        margin: 8px auto;
+    }
+
+    .footer-col h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .footer-social {
+        flex-wrap: wrap;
+    }
+}
+
+
+  /* WhatsApp Button */
+  .whatsapp-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #25D366;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+
+    /* animation */
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+  }
+
+  .whatsapp-btn:hover {
+    transform: translateX(0);
+    background-color: #1ebe5d;
+  }
+
+  /* Mobile responsive */
+  @media (max-width: 600px) {
+    .whatsapp-btn {
+      padding: 10px 14px;
+      font-size: 14px;
+      bottom: 15px;
+      left: 10px;
+
+      /* smaller slide for mobile */
+      transform: translateX(-6px);
+    }
+
+    .whatsapp-btn:hover {
+      transform: translateX(0);
+    }
+  }
+
+.footer-bottom a{
+  color:#6366f1;
+  text-decoration:none;
+}
+
+.footer-bottom a:hover{
+  text-decoration:underline;
+}
+
+
+
+</style>
+</head>
+
+<body>
+
+<!-- FOOTER START -->
+<footer class="site-footer">
+
+    <div class="container footer-grid">
+
+        <!-- LEFT BRAND -->
+        <div class="footer-brand">
+
+            <h2>Codewith<span>mithun</span></h2>
+
+            <p>
+                Digital India's trusted platform for education, teaching and information.
+                We make online services simple and accessible.
+            </p>
+
+            <div class="badges">
+                <span class="badge">✔ Verified</span>
+                <span class="badge secure">🔒 Secure</span>
+            </div>
+
+        </div>
+
+        <!-- LINKS -->
+        <div class="footer-col">
+            <h3>About</h3>
+            <a href="Our Story.html">Our Story</a>
+            <a href="Mission.html">Mission</a>
+            <a href="Team.html">Team</a>
+        </div>
+
+        <div class="footer-col">
+            <h3>Learn</h3>
+            <a href="Courses.html">Courses</a>
+            <a href="Tutorials,html">Tutorials</a>
+            <a href="Docs.html">Docs</a>
+        </div>
+
+        <div class="footer-col">
+            <h3>Support</h3>
+            <a href="Help Center.html">Help Center</a>
+            <a href="Privacy.html">Privacy</a>
+            <a href="Terms.html">Terms</a>
+        </div>
+
+    </div>
+
+    <!-- SOCIAL MEDIA -->
+    <div class="footer-social">
+
+        <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="#" title="X"><i class="fab fa-x-twitter"></i></a>
+        <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 CODE WITH MITHUN | All Rights Reserved
+                <a href="tel:+917295953892">+91 7295953892</a>
+
+    </div>
+
+    <!-- WhatsApp Support Button -->
+<a href="https://wa.me/917295953892" target="_blank" class="whatsapp-btn">
+  💬 Support
+</a>
+
+
+</footer>
+<!-- FOOTER END -->
+
+</body>
+</html>
